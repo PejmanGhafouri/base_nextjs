@@ -1,0 +1,6 @@
+{
+  "*.{js,jsx,ts,tsx,json,md,css,scss,html}": [
+    "prettier --write",
+    "yarn lint --no-cache  --dir ./"
+  ]
+}

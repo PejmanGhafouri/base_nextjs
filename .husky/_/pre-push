@@ -1,0 +1,23 @@
+#!/bin/sh
+
+echo "=========================="
+echo "Running pre-push...🚀🚀🚀"
+echo "=========================="
+
+yarn tsc --noEmit
+yarn test
+yarn build
+RESULT=$?
+
+if [ $RESULT -ne 0 ]; then
+  echo "❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌"
+  echo "NX Production Build failed."
+  echo "❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌"
+  exit 1
+fi
+
+echo "✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅"
+echo "All pre-push checks passed successfully."
+echo "✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅"
+
+exit 0
